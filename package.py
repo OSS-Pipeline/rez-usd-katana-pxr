@@ -1,4 +1,4 @@
-name = "usd_katana"
+name = "usd_katana_pxr"
 
 version = "19.07"
 
@@ -8,7 +8,7 @@ authors = [
 
 description = \
     """
-    USD plugin for Foundry Katana.
+    USD plugin for Foundry Katana from Pixar's repository.
     """
 
 requires = [
@@ -30,13 +30,11 @@ with scope("config") as config:
 uuid = "usd_katana-{version}".format(version=str(version))
 
 def commands():
-    env.PATH.prepend("{root}/bin")
     env.LD_LIBRARY_PATH.prepend("{root}/lib")
     env.PYTHONPATH.prepend("{root}/lib/python")
     env.KATANA_RESOURCES.prepend("{root}/third_party/katana/plugin")
     env.KATANA_POST_PYTHONPATH.prepend("{root}/third_party/katana/lib")
 
     # Helper environment variables.
-    env.USD_KATANA_BINARY_PATH.set("{root}/bin")
     env.USD_KATANA_INCLUDE_PATH.set("{root}/include")
     env.USD_KATANA_LIBRARY_PATH.set("{root}/lib")

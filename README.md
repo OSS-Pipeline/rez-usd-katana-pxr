@@ -1,4 +1,4 @@
-rez-usd-katana
+rez-usd-katana-pxr
 ===
 
-Rez build configuration for Pixar USD&#39;s Katana plugin.
+Rez build configuration for Pixar USD's Katana plugin.
