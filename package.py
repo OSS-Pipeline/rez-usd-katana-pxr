@@ -32,8 +32,8 @@ uuid = "usd_katana-{version}".format(version=str(version))
 def commands():
     env.LD_LIBRARY_PATH.prepend("{root}/lib")
     env.PYTHONPATH.prepend("{root}/lib/python")
-    env.KATANA_RESOURCES.prepend("{root}/third_party/katana/plugin")
-    env.KATANA_POST_PYTHONPATH.prepend("{root}/third_party/katana/lib")
+    env.KATANA_RESOURCES.append("{root}/third_party/katana/plugin")
+    env.KATANA_POST_PYTHONPATH.append("{root}/third_party/katana/lib")
 
     # Helper environment variables.
     env.USD_KATANA_INCLUDE_PATH.set("{root}/include")
