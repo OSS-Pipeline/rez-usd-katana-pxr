@@ -15,7 +15,7 @@ requires = [
     "cmake-3+",
     "gcc-6+",
     "katana-3.2+",
-    "usd-{version}".format(version=str(version))
+    "usd_core-{version}".format(version=str(version))
 ]
 
 variants = [
