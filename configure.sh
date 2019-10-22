@@ -6,7 +6,7 @@ set -e
 EXTRACT_PATH=$1
 BUILD_PATH=$2
 INSTALL_PATH=${REZ_BUILD_INSTALL_PATH}
-USD_KATANA_VERSION=${REZ_BUILD_PROJECT_VERSION}
+USD_KATANA_PXR_VERSION=${REZ_BUILD_PROJECT_VERSION}
 
 # We print the arguments passed to the Bash script.
 echo -e "\n"
@@ -18,11 +18,11 @@ echo -e "\n"
 echo -e "[CONFIGURE][ARGS] EXTRACT PATH: ${EXTRACT_PATH}"
 echo -e "[CONFIGURE][ARGS] BUILD PATH: ${BUILD_PATH}"
 echo -e "[CONFIGURE][ARGS] INSTALL PATH: ${INSTALL_PATH}"
-echo -e "[CONFIGURE][ARGS] USD-KATANA VERSION: ${USD_KATANA_VERSION}"
+echo -e "[CONFIGURE][ARGS] USD-KATANA-PXR VERSION: ${USD_KATANA_PXR_VERSION}"
 
 # We check if the arguments variables we need are correctly set.
 # If not, we abort the process.
-if [[ -z ${EXTRACT_PATH} || -z ${BUILD_PATH} || -z ${INSTALL_PATH} || -z ${USD_KATANA_VERSION} ]]; then
+if [[ -z ${EXTRACT_PATH} || -z ${BUILD_PATH} || -z ${INSTALL_PATH} || -z ${USD_KATANA_PXR_VERSION} ]]; then
     echo -e "\n"
     echo -e "[CONFIGURE][ARGS] One or more of the argument variables are empty. Aborting..."
     echo -e "\n"
@@ -30,9 +30,9 @@ if [[ -z ${EXTRACT_PATH} || -z ${BUILD_PATH} || -z ${INSTALL_PATH} || -z ${USD_K
     exit 1
 fi
 
-# We run the configuration script of USD-Katana.
+# We run the configuration script of USD-Katana-Pxr.
 echo -e "\n"
-echo -e "[CONFIGURE] Running the configuration script from USD-Katana-${USD_KATANA_VERSION}..."
+echo -e "[CONFIGURE] Running the configuration script from USD-Katana-Pxr-${USD_KATANA_PXR_VERSION}..."
 echo -e "\n"
 
 mkdir -p ${BUILD_PATH}
@@ -104,5 +104,5 @@ cmake \
     -DUSD_LIBRARY_PATH=${REZ_USD_CORE_ROOT}/lib
 
 echo -e "\n"
-echo -e "[CONFIGURE] Finished configuring USD-Katana-${USD_KATANA_VERSION}!"
+echo -e "[CONFIGURE] Finished configuring USD-Katana-Pxr-${USD_KATANA_PXR_VERSION}!"
 echo -e "\n"

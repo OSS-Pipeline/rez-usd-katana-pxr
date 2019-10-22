@@ -4,7 +4,7 @@
 set -e
 
 BUILD_PATH=$1
-USD_KATANA_VERSION=${REZ_BUILD_PROJECT_VERSION}
+USD_KATANA_PXR_VERSION=${REZ_BUILD_PROJECT_VERSION}
 
 # We print the arguments passed to the Bash script.
 echo -e "\n"
@@ -14,11 +14,11 @@ echo -e "============="
 echo -e "\n"
 
 echo -e "[BUILD][ARGS] BUILD PATH: ${BUILD_PATH}"
-echo -e "[BUILD][ARGS] USD-KATANA VERSION: ${USD_KATANA_VERSION}"
+echo -e "[BUILD][ARGS] USD-KATANA-PXR VERSION: ${USD_KATANA_PXR_VERSION}"
 
 # We check if the arguments variables we need are correctly set.
 # If not, we abort the process.
-if [[ -z ${BUILD_PATH} || -z ${USD_KATANA_VERSION} ]]; then
+if [[ -z ${BUILD_PATH} || -z ${USD_KATANA_PXR_VERSION} ]]; then
     echo -e "\n"
     echo -e "[BUILD][ARGS] One or more of the argument variables are empty. Aborting..."
     echo -e "\n"
@@ -26,9 +26,9 @@ if [[ -z ${BUILD_PATH} || -z ${USD_KATANA_VERSION} ]]; then
     exit 1
 fi
 
-# We build USD-Katana.
+# We build USD-Katana-Pxr.
 echo -e "\n"
-echo -e "[BUILD] Building USD-Katana-${USD_KATANA_VERSION}..."
+echo -e "[BUILD] Building USD-Katana-Pxr-${USD_KATANA_PXR_VERSION}..."
 echo -e "\n"
 
 cd ${BUILD_PATH}
@@ -37,5 +37,5 @@ make \
     -j${REZ_BUILD_THREAD_COUNT}
 
 echo -e "\n"
-echo -e "[BUILD] Finished building USD-Katana-${USD_KATANA_VERSION}!"
+echo -e "[BUILD] Finished building USD-Katana-Pxr-${USD_KATANA_PXR_VERSION}!"
 echo -e "\n"

@@ -5,7 +5,7 @@ set -e
 
 BUILD_PATH=$1
 INSTALL_PATH=${REZ_BUILD_INSTALL_PATH}
-USD_KATANA_VERSION=${REZ_BUILD_PROJECT_VERSION}
+USD_KATANA_PXR_VERSION=${REZ_BUILD_PROJECT_VERSION}
 
 # We print the arguments passed to the Bash script.
 echo -e "\n"
@@ -16,11 +16,11 @@ echo -e "\n"
 
 echo -e "[INSTALL][ARGS] BUILD PATH: ${BUILD_PATH}"
 echo -e "[INSTALL][ARGS] INSTALL PATH: ${INSTALL_PATH}"
-echo -e "[INSTALL][ARGS] USD-KATANA VERSION: ${USD_KATANA_VERSION}"
+echo -e "[INSTALL][ARGS] USD-KATANA-PXR VERSION: ${USD_KATANA_PXR_VERSION}"
 
 # We check if the arguments variables we need are correctly set.
 # If not, we abort the process.
-if [[ -z ${BUILD_PATH} || -z ${INSTALL_PATH} || -z ${USD_KATANA_VERSION} ]]; then
+if [[ -z ${BUILD_PATH} || -z ${INSTALL_PATH} || -z ${USD_KATANA_PXR_VERSION} ]]; then
     echo -e "\n"
     echo -e "[INSTALL][ARGS] One or more of the argument variables are empty. Aborting..."
     echo -e "\n"
@@ -28,9 +28,9 @@ if [[ -z ${BUILD_PATH} || -z ${INSTALL_PATH} || -z ${USD_KATANA_VERSION} ]]; the
     exit 1
 fi
 
-# We install USD-Katana.
+# We install USD-Katana-Pxr.
 echo -e "\n"
-echo -e "[INSTALL] Installing USD-Katana-${USD_KATANA_VERSION}..."
+echo -e "[INSTALL] Installing USD-Katana-Pxr-${USD_KATANA_PXR_VERSION}..."
 echo -e "\n"
 
 cd ${BUILD_PATH}
@@ -58,5 +58,5 @@ echo -e "\n"
 echo -e "[INSTALL][PYTHON] The \"pxr\" Python module has been successfully extended!"
 
 echo -e "\n"
-echo -e "[INSTALL] Finished installing USD-Katana-${USD_KATANA_VERSION}!"
+echo -e "[INSTALL] Finished installing USD-Katana-Pxr-${USD_KATANA_PXR_VERSION}!"
 echo -e "\n"
